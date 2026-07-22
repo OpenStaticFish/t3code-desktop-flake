@@ -130,7 +130,7 @@
               "Development"
               "IDE"
             ];
-            startupWMClass = "T3 Code";
+            startupWMClass = "t3code";
             terminal = false;
           };
         in
