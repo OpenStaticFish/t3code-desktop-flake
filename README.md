@@ -8,6 +8,8 @@ Nix store paths are immutable.
 Every update is SHA-256 verified against the digest published in the GitHub
 release. The Home Manager module runs a user timer every three hours, matching
 T3 Code's nightly release cadence. Launching `t3code` also checks for updates.
+Only nightly-tagged releases with a Linux x86_64 AppImage are selected; preview
+releases are skipped.
 
 ## Home Manager
 

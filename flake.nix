@@ -57,7 +57,7 @@
                   return 1
                 fi
 
-                if ! tag="$(jq --raw-output --exit-status '[.[] | select(.prerelease and (.draft | not))] | first | .tag_name' "$release_json")"; then
+                if ! tag="$(jq --raw-output --exit-status '[.[] | select(.prerelease and (.draft | not) and (.tag_name | contains("-nightly.")) and any(.assets[]; .name | endswith("-x86_64.AppImage")))] | first | .tag_name' "$release_json")"; then
                   rm -f -- "$release_json"
                   return 1
                 fi
