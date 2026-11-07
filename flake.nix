@@ -184,8 +184,8 @@
 
             package = lib.mkOption {
               type = lib.types.package;
-              default = self.packages.${pkgs.system}.default;
-              defaultText = lib.literalExpression "inputs.t3code-nightly.packages.\${pkgs.system}.default";
+              default = self.packages.${pkgs.stdenv.hostPlatform.system}.default;
+              defaultText = lib.literalExpression "inputs.t3code-nightly.packages.\${pkgs.stdenv.hostPlatform.system}.default";
               description = "The T3 Code nightly package to install.";
             };
 
